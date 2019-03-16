@@ -36,6 +36,14 @@ class SampleHelloWorld : GLSurfaceView.Renderer {
     private var glSurfaceViewWidth = 0
     private var glSurfaceViewHeight = 0
 
+    // 三角形顶点数据
+    // The vertex data of a triangle
+    private val vertexData = floatArrayOf(0f, 0.5f, -0.5f, -0.5f, 0.5f, -0.5f)
+
+    // 每个顶点的成份数
+    // The num of components of per vertex
+    private val VERTEX_COMPONENT_COUNT = 2
+
     override fun onDrawFrame(gl: GL10?) {
         // 设置视口，这里设置为整个GLSurfaceView区域
         // Set the viewport to the full GLSurfaceView
@@ -43,7 +51,7 @@ class SampleHelloWorld : GLSurfaceView.Renderer {
 
         // 调用draw方法用TRIANGLES的方式执行渲染，顶点数量为3个
         // Call the draw method with GL_TRIANGLES to render 3 vertices
-        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, 3)
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexData.size / VERTEX_COMPONENT_COUNT)
     }
 
     override fun onSurfaceChanged(gl: GL10?, width: Int, height: Int) {
@@ -75,10 +83,6 @@ class SampleHelloWorld : GLSurfaceView.Renderer {
         // 链接GL程序
         // Link the GL program
         GLES20.glLinkProgram(programId)
-
-        // 三角形顶点数据
-        // The vertex data of a triangle
-        val vertexData = floatArrayOf(0f, 0.5f, -0.5f, -0.5f, 0.5f, -0.5f)
 
         // 将三角形顶点数据放入buffer中
         // Put the triangle vertex data into the buffer
