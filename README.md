@@ -19,11 +19,13 @@ I will publish some Android OpenGL ES 2.0 learning articles on my **jianshu**, i
 
 Now, this project contains 1 sample.
 
-- Hello World（https://www.jianshu.com/p/c663a3783d36）
+- Hello World
 
   一个简单的Hello World例子，渲染一个三角形。
 
   A simple Hello World, render a triangle. 
+
+  https://www.jianshu.com/p/c663a3783d36
 
   
 
