@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OpenGL2.0SamplesForAndroid</string>
+    <string name="sample_0">Hello World</string>
+    <string name="sample_1">两个三角形（2 Triangles）</string>
 </resources>

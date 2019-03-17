@@ -3,6 +3,7 @@ package com.kenneycode
 import android.opengl.GLSurfaceView
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.kenneycode.samples.Sample2Triangles
 import com.kenneycode.samples.SampleHelloWorld
 
 /**
@@ -18,7 +19,7 @@ import com.kenneycode.samples.SampleHelloWorld
 
 class SimpleActivity : AppCompatActivity() {
 
-    private val samples = arrayOf(SampleHelloWorld())
+    private val samples = arrayOf(SampleHelloWorld(), Sample2Triangles())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
