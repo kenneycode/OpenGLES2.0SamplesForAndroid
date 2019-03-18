@@ -8,9 +8,9 @@ This is a OpenGL 2.0 learning project for Android, and I will continue to code a
 
 
 
-在我的**掘金**上，我会发布相关的Android OpenGL ES 2.0教学文章，包括每个例子的对应的讲解文章，以及一些其它知识，欢迎关注：https://juejin.im/user/5afabe81f265da0b7b361036/activities
+在我的**掘金**上，我会发布相关的Android OpenGL ES 2.0教学文章，包括每个例子的对应的讲解文章，以及一些其它知识，欢迎关注：https://juejin.im/user/5afabe81f265da0b7b361036/posts
 
-I will publish some Android OpenGL ES 2.0 learning articles on my **juejin**, including the articles related to every samples in this project, and other knowledge.  Welcome! Link: https://juejin.im/user/5afabe81f265da0b7b361036/activities
+I will publish some Android OpenGL ES 2.0 learning articles on my **juejin**, including the articles related to every samples in this project, and other knowledge.  Welcome! Link: https://juejin.im/user/5afabe81f265da0b7b361036/posts
 
 
 
