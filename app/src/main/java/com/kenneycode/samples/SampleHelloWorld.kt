@@ -106,7 +106,7 @@ class SampleHelloWorld : GLSurfaceView.Renderer {
 
         // 指定a_Position所使用的顶点数据
         // Specify the vertex data of a_Position
-        GLES20.glVertexAttribPointer(location, 2, GLES20.GL_FLOAT, false,0, buffer)
+        GLES20.glVertexAttribPointer(location, VERTEX_COMPONENT_COUNT, GLES20.GL_FLOAT, false,0, buffer)
     }
 
 }
