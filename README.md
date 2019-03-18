@@ -15,17 +15,25 @@ I will publish some Android OpenGL ES 2.0 learning articles on my **juejin**, in
 
 
 
-目前工程中有1个例子:
+目前工程中有2个例子:
 
-Now, this project contains 1 sample.
+Now, this project contains 2 samples.
 
 - Hello World
 
-  一个简单的Hello World例子，渲染一个三角形。
+  一个简单的Hello World例子，渲染一个三角形
 
   A simple Hello World, render a triangle. 
 
   https://juejin.im/post/5c8d0011f265da2d8c7e14a6
+
+- Hello World
+
+  渲染2个三角形。通过一次传递6个顶点，我们可以一次渲染2个三角形。
+
+  A simple of Rendering 2 triangles. We can render 2 triangles at a time by setting 6 vertices.
+
+  https://juejin.im/post/5c8e3652f265da67e20a3964
 
   
 
