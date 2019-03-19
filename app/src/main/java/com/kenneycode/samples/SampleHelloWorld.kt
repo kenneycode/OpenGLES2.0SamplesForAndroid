@@ -45,6 +45,14 @@ class SampleHelloWorld : GLSurfaceView.Renderer {
     private val VERTEX_COMPONENT_COUNT = 2
 
     override fun onDrawFrame(gl: GL10?) {
+        // 设置清屏颜色
+        // Set the color which the screen will be cleared to
+        GLES20.glClearColor(0.9f, 0.9f, 0.9f, 1f)
+
+        // 清屏
+        // Clear the screen
+        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
+
         // 设置视口，这里设置为整个GLSurfaceView区域
         // Set the viewport to the full GLSurfaceView
         GLES20.glViewport(0, 0, glSurfaceViewWidth, glSurfaceViewHeight)
