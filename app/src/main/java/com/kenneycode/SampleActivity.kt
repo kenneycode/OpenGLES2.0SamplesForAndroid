@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.kenneycode.samples.Sample2Triangles
 import com.kenneycode.samples.SampleHelloWorld
+import com.kenneycode.samples.SampleVertexShader
 
 /**
  *
@@ -19,7 +20,7 @@ import com.kenneycode.samples.SampleHelloWorld
 
 class SimpleActivity : AppCompatActivity() {
 
-    private val samples = arrayOf(SampleHelloWorld(), Sample2Triangles())
+    private val samples = arrayOf(SampleHelloWorld(), Sample2Triangles(), SampleVertexShader())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
