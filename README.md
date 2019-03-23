@@ -19,7 +19,7 @@ I will publish some Android OpenGL ES 2.0 learning articles on my **juejin**, in
 
 Now, this project contains 2 samples.
 
-- Hello World
+- SampleHelloWorld
 
   一个简单的Hello World例子，渲染一个三角形
 
@@ -27,13 +27,22 @@ Now, this project contains 2 samples.
 
   https://juejin.im/post/5c8d0011f265da2d8c7e14a6
 
-- Hello World
+- Sample2Triangles
 
   渲染2个三角形。通过一次传递6个顶点，我们可以一次渲染2个三角形。
 
   A simple of Rendering 2 triangles. We can render 2 triangles at a time by setting 6 vertices.
 
   https://juejin.im/post/5c8e3652f265da67e20a3964
+
+- SampleVertexShader
+
+
+  这是一个使用vertex shader做顶点变换的例子，例子中将演示平移、缩放和旋转变换
+
+  This sample demonstrates how to do vertex translation，scale and rotation using vertex shader.
+
+  https://juejin.im/post/5c91c561f265da61246d5c57
 
   
 
