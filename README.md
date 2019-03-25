@@ -15,19 +15,23 @@ I will publish some Android OpenGL ES 2.0 learning articles on my **juejin**, in
 
 
 
-目前工程中有2个例子:
+目前工程中有4个例子:
 
-Now, this project contains 2 samples.
+Now, this project contains 4 samples.
 
-- SampleHelloWorld
+
+
+- **SampleHelloWorld**
 
   一个简单的Hello World例子，渲染一个三角形
 
-  A simple Hello World, render a triangle. 
+  A simple Hello World, render a triangle.
 
   https://juejin.im/post/5c8d0011f265da2d8c7e14a6
 
-- Sample2Triangles
+
+
+- **Sample2Triangles**
 
   渲染2个三角形。通过一次传递6个顶点，我们可以一次渲染2个三角形。
 
@@ -35,8 +39,9 @@ Now, this project contains 2 samples.
 
   https://juejin.im/post/5c8e3652f265da67e20a3964
 
-- SampleVertexShader
 
+
+- **SampleVertexShader**
 
   这是一个使用vertex shader做顶点变换的例子，例子中将演示平移、缩放和旋转变换
 
@@ -44,7 +49,10 @@ Now, this project contains 2 samples.
 
   https://juejin.im/post/5c91c561f265da61246d5c57
 
-  
 
-  
 
+- **SampleFragmentShader**
+
+  这是一个利用fragment shader渲染彩色三角形例子
+
+  This is a sample of using fragment shader to render a colorful triangle
