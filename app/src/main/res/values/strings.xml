@@ -3,4 +3,5 @@
     <string name="sample_0">Hello World</string>
     <string name="sample_1">两个三角形（2 Triangles）</string>
     <string name="sample_2">顶点着色器（Vertex Shader）</string>
+    <string name="sample_3">片段着色器（Fragment Shader）</string>
 </resources>
