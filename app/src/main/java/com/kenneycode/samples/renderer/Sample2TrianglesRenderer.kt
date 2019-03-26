@@ -1,4 +1,4 @@
-package com.kenneycode.samples
+package com.kenneycode.samples.renderer
 
 import android.opengl.GLES20
 import android.opengl.GLSurfaceView
@@ -13,28 +13,24 @@ import javax.microedition.khronos.opengles.GL10
  *
  *      http://www.github.com/kenneycode
  *
- *      这是一个利用fragment shader渲染彩色三角形例子
- *      This is a sample of using fragment shader to render a colorful triangle
+ *      在第一个例子Hello World的基础上稍作修改，渲染2个三角形的例子
+ *      This sample demonstrates how to render 2 triangles base on the code of our first sample
  *
  **/
 
-class SampleFragmentShader : GLSurfaceView.Renderer {
+class Sample2TrianglesRenderer : GLSurfaceView.Renderer {
 
     private val vertexShaderCode =
         "precision mediump float;\n" +
                 "attribute vec4 a_Position;\n" +
-                "attribute vec4 a_Color;\n" +
-                "varying vec4 v_Color;\n" +
                 "void main() {\n" +
-                "    v_Color = a_Color;\n" +
                 "    gl_Position = a_Position;\n" +
                 "}"
 
     private val fragmentShaderCode =
         "precision mediump float;\n" +
-                "varying vec4 v_Color;\n" +
                 "void main() {\n" +
-                "    gl_FragColor = v_Color;\n" +
+                "    gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);\n" +
                 "}"
 
     private var glSurfaceViewWidth = 0
@@ -42,21 +38,11 @@ class SampleFragmentShader : GLSurfaceView.Renderer {
 
     // 三角形顶点数据
     // The vertex data of a triangle
-    private val vertexData = floatArrayOf(0f, 0.5f, -0.5f, -0.5f, 0.5f, -0.5f)
-
-
-    private val colorData = floatArrayOf(
-                                        1.0f, 0.0f, 0.0f, 1.0f,
-                                        0.0f, 1.0f, 0.0f, 1.0f,
-                                        0.0f, 0.0f, 1.0f, 1.0f)
+    private val vertexData = floatArrayOf(-0.5f, 1f, -1f, 0f, 0f, 0f, 0.5f, 0f, 0f, -1f, 1f, -1f)
 
     // 每个顶点的成份数
     // The num of components of per vertex
     private val VERTEX_COMPONENT_COUNT = 2
-
-    // 每个颜色的成份数（RGBA）
-    // The num of components of per color(RGBA)
-    private val COLOR_COMPONENT_COUNT = 4
 
     override fun onDrawFrame(gl: GL10?) {
         // 设置清屏颜色
@@ -108,11 +94,11 @@ class SampleFragmentShader : GLSurfaceView.Renderer {
 
         // 将三角形顶点数据放入buffer中
         // Put the triangle vertex data into the buffer
-        val vertexDataBuffer = ByteBuffer.allocateDirect(vertexData.size * java.lang.Float.SIZE)
+        val buffer = ByteBuffer.allocateDirect(vertexData.size * java.lang.Float.SIZE)
             .order(ByteOrder.nativeOrder())
             .asFloatBuffer()
-        vertexDataBuffer.put(vertexData)
-        vertexDataBuffer.position(0)
+        buffer.put(vertexData)
+        buffer.position(0)
 
         // 应用GL程序
         // Use the GL program
@@ -120,35 +106,15 @@ class SampleFragmentShader : GLSurfaceView.Renderer {
 
         // 获取字段a_Position在shader中的位置
         // Get the location of a_Position in the shader
-        val aPositionLocation = GLES20.glGetAttribLocation(programId, "a_Position")
+        val location = GLES20.glGetAttribLocation(programId, "a_Position")
 
         // 启动对应位置的参数
         // Enable the parameter of the location
-        GLES20.glEnableVertexAttribArray(aPositionLocation)
+        GLES20.glEnableVertexAttribArray(location)
 
         // 指定a_Position所使用的顶点数据
         // Specify the vertex data of a_Position
-        GLES20.glVertexAttribPointer(aPositionLocation, VERTEX_COMPONENT_COUNT, GLES20.GL_FLOAT, false,0, vertexDataBuffer)
-
-        // 将颜色数据放入buffer中
-        // Put the color data into the buffer
-        val colorDataBuffer = ByteBuffer.allocateDirect(colorData.size * java.lang.Float.SIZE)
-            .order(ByteOrder.nativeOrder())
-            .asFloatBuffer()
-        colorDataBuffer.put(colorData)
-        colorDataBuffer.position(0)
-
-        // 获取字段a_Color在shader中的位置
-        // Get the location of a_Color in the shader
-        val aColorLocation = GLES20.glGetAttribLocation(programId, "a_Color")
-
-        // 启动对应位置的参数
-        // Enable the parameter of the location
-        GLES20.glEnableVertexAttribArray(aColorLocation)
-
-        // 指定a_Color所使用的顶点数据
-        // Specify the vertex data of a_Color
-        GLES20.glVertexAttribPointer(aColorLocation, COLOR_COMPONENT_COUNT, GLES20.GL_FLOAT, false,0, colorDataBuffer)
+        GLES20.glVertexAttribPointer(location, VERTEX_COMPONENT_COUNT, GLES20.GL_FLOAT, false,0, buffer)
     }
 
 }

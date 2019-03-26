@@ -1,4 +1,4 @@
-package com.kenneycode.samples
+package com.kenneycode.samples.renderer
 
 import android.opengl.GLES20
 import android.opengl.GLSurfaceView
@@ -18,7 +18,7 @@ import javax.microedition.khronos.opengles.GL10
  *
  **/
 
-class SampleVertexShader : GLSurfaceView.Renderer {
+class SampleVertexShaderRenderer : GLSurfaceView.Renderer {
 
     private val vertexShaderCode =
             "precision mediump float;\n" +

@@ -1,4 +1,4 @@
-package com.kenneycode.samples
+package com.kenneycode.samples.renderer
 
 import android.opengl.GLES20
 import android.opengl.GLSurfaceView
@@ -13,46 +13,40 @@ import javax.microedition.khronos.opengles.GL10
  *
  *      http://www.github.com/kenneycode
  *
- *      这是一个Hello World例子，渲染一个最简单的三角形
- *      This is the first sample Hello World, and it will show you how to render a simplest triangle
+ *      这是一个演示不同绘制模式的例子
+ *      This sample demonstrates the difference between the draw modes
  *
  **/
 
-class SampleHelloWorld : GLSurfaceView.Renderer {
+class SampleDrawModeRenderer : GLSurfaceView.Renderer {
 
     private val vertexShaderCode =
-            "precision mediump float;\n" +
-            "attribute vec4 a_Position;\n" +
-            "void main() {\n" +
-            "    gl_Position = a_Position;\n" +
-            "}"
+        "precision mediump float;\n" +
+                "attribute vec4 a_Position;\n" +
+                "void main() {\n" +
+                "    gl_Position = a_Position;\n" +
+                "}"
 
     private val fragmentShaderCode =
-            "precision mediump float;\n" +
-            "void main() {\n" +
-            "    gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);\n" +
-            "}"
+        "precision mediump float;\n" +
+                "void main() {\n" +
+                "    gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);\n" +
+                "}"
 
     private var glSurfaceViewWidth = 0
     private var glSurfaceViewHeight = 0
 
     // 三角形顶点数据
     // The vertex data of a triangle
-    private val vertexData = floatArrayOf(0f, 0.5f, -0.5f, -0.5f, 0.5f, -0.5f)
+    private val vertexData = floatArrayOf(0f, 0f, -0.5f, 0f, 0f, 0.5f, 0.5f, 0f, 0f, -0.5f, -0.5f, -0.5f)
 
     // 每个顶点的成份数
     // The num of components of per vertex
     private val VERTEX_COMPONENT_COUNT = 2
 
     override fun onDrawFrame(gl: GL10?) {
-        // 设置清屏颜色
-        // Set the color which the screen will be cleared to
         GLES20.glClearColor(0.9f, 0.9f, 0.9f, 1f)
-
-        // 清屏
-        // Clear the screen
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
-
         // 设置视口，这里设置为整个GLSurfaceView区域
         // Set the viewport to the full GLSurfaceView
         GLES20.glViewport(0, 0, glSurfaceViewWidth, glSurfaceViewHeight)
