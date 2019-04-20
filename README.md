@@ -56,3 +56,5 @@ Now, this project contains 4 samples.
   这是一个利用fragment shader渲染彩色三角形例子
 
   This is a sample of using fragment shader to render a colorful triangle
+  
+  https://juejin.im/post/5c946bc4e51d45637f7a6434
