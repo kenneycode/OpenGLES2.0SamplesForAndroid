@@ -15,9 +15,9 @@ I will publish some Android OpenGL ES 2.0 learning articles on my **juejin**, in
 
 
 
-目前工程中有4个例子:
+目前工程中有5个例子:
 
-Now, this project contains 4 samples.
+Now, this project contains 5 samples.
 
 
 
@@ -56,5 +56,16 @@ Now, this project contains 4 samples.
   这是一个利用fragment shader渲染彩色三角形例子
 
   This is a sample of using fragment shader to render a colorful triangle
-  
+
   https://juejin.im/post/5c946bc4e51d45637f7a6434
+
+
+
+- **SampleDrawMode**
+
+  这是一个演示`GL_TRIANGLES`、`GL_TRIANGLE_STRIP`和`GL_TRIANGLE_FAN`三种绘制模式例子
+
+  This sample demonstrates three commonly used draw modes, `GL_TRIANGLES`、`GL_TRIANGLE_STRIP` and `GL_TRIANGLE_FAN`
+
+  https://juejin.im/post/5cbb1787e51d456e46603e2d
+
