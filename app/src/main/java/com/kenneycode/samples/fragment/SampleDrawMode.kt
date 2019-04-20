@@ -22,7 +22,7 @@ import com.kenneycode.samples.renderer.SampleDrawModeRenderer
 
 class SampleDrawMode : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_common_sample, container,  false)
+        val rootView = inflater.inflate(R.layout.fragment_sample_draw_mode, container,  false)
         val glSurfaceView = rootView.findViewById<GLSurfaceView>(R.id.glsurfaceview)
         // 设置RGBA颜色缓冲、深度缓冲及stencil缓冲大小
         // Set the size of RGBA、depth and stencil buffer
@@ -32,7 +32,7 @@ class SampleDrawMode : Fragment() {
         glSurfaceView.setEGLContextClientVersion(2)
         // 设置对应sample的渲染器
         // Set the corresponding sample renderer
-        glSurfaceView.setRenderer(SampleDrawModeRenderer())
+        glSurfaceView.setRenderer(SampleDrawModeRenderer(rootView))
         return rootView
     }
 }

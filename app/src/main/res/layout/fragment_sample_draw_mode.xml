@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/glsurfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/button_draw_mode_triangles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRIANGLES"/>
+
+    <Button
+        android:id="@+id/button_draw_mode_triangle_stripe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRIANGLE STRIPE"
+        android:layout_below="@+id/button_draw_mode_triangles"/>
+
+    <Button
+        android:id="@+id/button_draw_mode_triangle_fan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRIANGLE FAN"
+        android:layout_below="@+id/button_draw_mode_triangle_stripe"/>
+
+</RelativeLayout>

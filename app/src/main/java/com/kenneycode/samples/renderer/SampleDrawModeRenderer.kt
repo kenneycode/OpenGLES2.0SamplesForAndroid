@@ -2,6 +2,9 @@ package com.kenneycode.samples.renderer
 
 import android.opengl.GLES20
 import android.opengl.GLSurfaceView
+import android.view.View
+import com.kenneycode.R
+import kotlinx.android.synthetic.main.fragment_sample_draw_mode.view.*
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import javax.microedition.khronos.egl.EGLConfig
@@ -21,14 +24,14 @@ import javax.microedition.khronos.opengles.GL10
 class SampleDrawModeRenderer : GLSurfaceView.Renderer {
 
     private val vertexShaderCode =
-        "precision mediump float;\n" +
+                "precision mediump float;\n" +
                 "attribute vec4 a_Position;\n" +
                 "void main() {\n" +
                 "    gl_Position = a_Position;\n" +
                 "}"
 
     private val fragmentShaderCode =
-        "precision mediump float;\n" +
+                "precision mediump float;\n" +
                 "void main() {\n" +
                 "    gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);\n" +
                 "}"
@@ -44,6 +47,21 @@ class SampleDrawModeRenderer : GLSurfaceView.Renderer {
     // The num of components of per vertex
     private val VERTEX_COMPONENT_COUNT = 2
 
+
+    private var drawMode = GLES20.GL_TRIANGLES
+
+    constructor(rootView : View) {
+        rootView.findViewById<View>(R.id.button_draw_mode_triangles).setOnClickListener {
+            drawMode = GLES20.GL_TRIANGLES
+        }
+        rootView.findViewById<View>(R.id.button_draw_mode_triangle_stripe).setOnClickListener {
+            drawMode = GLES20.GL_TRIANGLE_STRIP
+        }
+        rootView.findViewById<View>(R.id.button_draw_mode_triangle_fan).setOnClickListener {
+            drawMode = GLES20.GL_TRIANGLE_FAN
+        }
+    }
+
     override fun onDrawFrame(gl: GL10?) {
         GLES20.glClearColor(0.9f, 0.9f, 0.9f, 1f)
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
@@ -53,7 +71,7 @@ class SampleDrawModeRenderer : GLSurfaceView.Renderer {
 
         // 调用draw方法用TRIANGLES的方式执行渲染，顶点数量为3个
         // Call the draw method with GL_TRIANGLES to render 3 vertices
-        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexData.size / VERTEX_COMPONENT_COUNT)
+        GLES20.glDrawArrays(drawMode, 0, vertexData.size / VERTEX_COMPONENT_COUNT)
     }
 
     override fun onSurfaceChanged(gl: GL10?, width: Int, height: Int) {
