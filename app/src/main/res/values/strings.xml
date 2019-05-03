@@ -5,4 +5,5 @@
     <string name="sample_2">顶点着色器（Vertex Shader）</string>
     <string name="sample_3">片段着色器（Fragment Shader）</string>
     <string name="sample_4">绘制模式（Draw Mode）</string>
+    <string name="sample_5">纹理（Texture）</string>
 </resources>

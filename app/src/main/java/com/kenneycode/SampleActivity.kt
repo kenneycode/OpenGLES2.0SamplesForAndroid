@@ -24,7 +24,8 @@ class SimpleActivity : AppCompatActivity() {
             Sample2Triangles(),
             SampleVertexShader(),
             SampleFragmentShader(),
-            SampleDrawMode()
+            SampleDrawMode(),
+            SampleTexture()
         )
 
     override fun onCreate(savedInstanceState: Bundle?) {
