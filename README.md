@@ -15,9 +15,9 @@ I will publish some Android OpenGL ES 2.0 learning articles on my **juejin**, in
 
 
 
-目前工程中有5个例子:
+目前工程中有6个例子:
 
-Now, this project contains 5 samples.
+Now, this project contains 6 samples.
 
 
 
@@ -68,4 +68,14 @@ Now, this project contains 5 samples.
   This sample demonstrates three commonly used draw modes, `GL_TRIANGLES`、`GL_TRIANGLE_STRIP` and `GL_TRIANGLE_FAN`
 
   https://juejin.im/post/5cbb1787e51d456e46603e2d
+
+  
+
+- **SampleTexture**
+
+  这是使用纹理的例子
+
+  This sample demonstrates how to use texture
+
+  https://juejin.im/post/5ccbcdfe6fb9a0325031c1d0
 
