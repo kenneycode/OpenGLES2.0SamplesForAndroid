@@ -53,8 +53,8 @@ class SampleTextureRenderer : GLSurfaceView.Renderer {
 
     // 纹理坐标
     // The texture coordinate
-    private val textureCoordinateData = floatArrayOf(0f, 1f, 0f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f, 0f, 1f, 0f, 0f, 1f, 1f, 0f)
-    private val TEXTURE_COORDINATE_COMPONENT_COUNT = 3
+    private val textureCoordinateData = floatArrayOf(0f, 1f, 0f, 0f, 1f, 0f, 0f, 1f, 1f, 0f, 1f, 1f)
+    private val TEXTURE_COORDINATE_COMPONENT_COUNT = 2
     private lateinit var textureCoordinateDataBuffer : FloatBuffer
 
     override fun onDrawFrame(gl: GL10?) {
@@ -112,6 +112,10 @@ class SampleTextureRenderer : GLSurfaceView.Renderer {
         // Use the GL program
         GLES20.glUseProgram(programId)
 
+//        for (i in 0 until vertexData.size) {
+//            vertexData[i] *= 5f
+//        }
+
         // 将三角形顶点数据放入buffer中
         // Put the triangle vertex data into the vertexDataBuffer
         vertexDataBuffer = ByteBuffer.allocateDirect(vertexData.size * java.lang.Float.SIZE / 8)
@@ -131,6 +135,10 @@ class SampleTextureRenderer : GLSurfaceView.Renderer {
         // 指定a_position所使用的顶点数据
         // Specify the data of a_position
         GLES20.glVertexAttribPointer(aPositionLocation, VERTEX_COMPONENT_COUNT, GLES20.GL_FLOAT, false,0, vertexDataBuffer)
+
+//        for (i in 0 until textureCoordinateData.size) {
+//            textureCoordinateData[i] *= 3f
+//        }
 
         // 将纹理坐标数据放入buffer中
         // Put the texture coordinates into the textureCoordinateDataBuffer
