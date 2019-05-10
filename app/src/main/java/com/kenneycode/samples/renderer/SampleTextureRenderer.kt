@@ -128,8 +128,8 @@ class SampleTextureRenderer : GLSurfaceView.Renderer {
         // Get the location of a_position in the shader
         val aPositionLocation = GLES20.glGetAttribLocation(programId, "a_position")
 
-        // 启动对应位置的参数，这里直接使用LOCATION_ATTRIBUTE_POSITION，而无需像OpenGL 2.0那样需要先获取参数的location
-        // Enable the parameter of the location. Here we can simply use LOCATION_ATTRIBUTE_POSITION, while in OpenGL 2.0 we have to query the location of the parameter
+        // 启动对应位置的参数
+        // Enable the parameter of the location
         GLES20.glEnableVertexAttribArray(aPositionLocation)
 
         // 指定a_position所使用的顶点数据
@@ -152,8 +152,8 @@ class SampleTextureRenderer : GLSurfaceView.Renderer {
         // Get the location of a_textureCoordinate in the shader
         val aTextureCoordinateLocation = GLES20.glGetAttribLocation(programId, "a_textureCoordinate")
 
-        // 启动对应位置的参数，这里直接使用LOCATION_ATTRIBUTE_TEXTURE_COORDINATE，而无需像OpenGL 2.0那样需要先获取参数的location
-        // Enable the parameter of the location. Here we can simply use LOCATION_ATTRIBUTE_TEXTURE_COORDINATE, while in OpenGL 2.0 we have to query the location of the parameter
+        // 启动对应位置的参数
+        // Enable the parameter of the location
         GLES20.glEnableVertexAttribArray(aTextureCoordinateLocation)
 
         // 指定a_textureCoordinate所使用的顶点数据
