@@ -25,7 +25,8 @@ class SimpleActivity : AppCompatActivity() {
             SampleVertexShader(),
             SampleFragmentShader(),
             SampleDrawMode(),
-            SampleTexture()
+            SampleTexture(),
+            SampleFrameBuffer()
         )
 
     override fun onCreate(savedInstanceState: Bundle?) {

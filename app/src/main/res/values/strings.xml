@@ -6,4 +6,5 @@
     <string name="sample_3">片段着色器（Fragment Shader）</string>
     <string name="sample_4">绘制模式（Draw Mode）</string>
     <string name="sample_5">纹理（Texture）</string>
+    <string name="sample_6">帧缓存（Frame Buffer）</string>
 </resources>
